@@ -14,7 +14,7 @@ import { createServer }   from 'http';
 import { WebSocketServer, WebSocket } from 'ws';
 import { execSync }       from 'child_process';
 
-const PORT = 3141;
+const PORT = process.env.PORT ?? 3141;
 
 // ─── HTTP + WebSocket server ──────────────────────────────────────────────────
 const httpServer = createServer(handleHttp);

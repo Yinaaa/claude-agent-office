@@ -20,7 +20,7 @@ class LiveBridgeClass {
     }
 
     /** Open (or reuse) the WebSocket connection */
-    connect(url = 'ws://localhost:3141') {
+    connect(url = import.meta.env.VITE_WS_URL ?? 'ws://localhost:3141') {
         if (this._ws && this._ws.readyState <= 1) return; // already open/opening
         try {
             this._ws = new WebSocket(url);
